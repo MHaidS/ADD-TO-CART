@@ -2,7 +2,11 @@
 <!doctype html>
 <html>
     <head>
-        <title>Add to Cart</title>
+        <title>Add to Cart
+            5. Adding Firebase to Project
+            6. Security Rules
+            7. innerHTML to append it to ul
+        </title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
@@ -13,24 +17,18 @@
             <img src="assets/cat.png">
             <input type="text" id="input-field" placeholder="Bread">
             <button id="add-button">Add to cart</button>
+            <!-- 7. innerHTML TO APPEND IT TO ul -->
+            <ul id="shopping-list">
+              <li>Oranges</li>
+              <li>Hot dogs</li>
+            </ul>
         </div>
-        <!-- set js file to type='module' -->
+        <!-- 5.6.4. set js file to type='module' .... we need to do this anytime inside of the js file where we are either using the 'import' or the 'export'; OR both of them, we have to set the js file to 'module', otherwise, it's not going to work ... test it out again, no error in the CONSOLE anymore -->
         <script src="index.js" type="module"></script>
     </body>
 </html>
 
-
-
 <!-- => -->
 <!-- => -->
-<!--  Adding Firebase to Project  -->
-<!--  *** Go to the 'Firebase Console' & create a new project
-        => Call your project 'Realtime Database'
-        => Disable Google Analytics
-        => Create a Realtime Database
-        => Set the Realtime Database Location to nearest you.
-        => Set the Security Rules to test mode.
-        => Copy Realtime Database Reference URL [https://realtime-database-a9508-default-rtdb.asia-southeast1.firebasedatabase.app/]
--->
 <!-- => -->
 <!-- => -->
