@@ -1,8 +1,3 @@
-/*
-3. Challenge:
-Make it so that when you click the 'Add to cart' button, whatever is written in the input field should be console logged.
-*/
-
 // 5.2.1. Challenge: Import 'initializeApp' from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 // 5.2.2. Challenge: Import 'getDatabase' from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
