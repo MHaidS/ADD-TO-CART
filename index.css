@@ -40,3 +40,32 @@ button {
   text-align: center;
   font-family: "Rubik", sans-serif;
 }
+
+ul {
+  /* a. ... get rid of the bullets */
+  list-style-type: none;
+  /* b. ... get rid of the space on the left side */
+  padding: 0;
+  /* c. ... use flexbox */
+  display: flex;
+  /* d. ... force the items onto 1 line */
+  flex-wrap: wrap;
+  /* h. ... since the items are cramped, let's give them some gap */
+  gap: 10px;
+}
+
+ul li {
+  /* k. ... define the font size to be identical with the 'input' */
+  font-size: 20px;
+  /* e. ... uncomment the background-color & box-shadow */
+  background-color: #fffdf8;
+  /* f. ... add padding */
+  padding: 15px;
+  /* g. ... match the border-radius of the 'button' */
+  border-radius: 8px;
+  /* i. ... use 'flex-grow' since there is still space on the rt side & we want the items to be stretched out as much as possible ... */
+  flex-grow: 1;
+  /*  j. ... the text are not quite aligned to the center, so use 'text-align' */
+  text-align: center;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
