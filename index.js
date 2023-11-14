@@ -66,5 +66,3 @@ const clearInputFieldEl = () => {
 const appendItemToShoppingListEl = (itemValue) => {
   shoppingListEl.innerHTML += `<li>${itemValue}</li>`;
 };
-
-//  *******************************************************
