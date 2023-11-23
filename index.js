@@ -18,6 +18,7 @@ const appSettings = {
 const app = initializeApp(appSettings);
 // ... create a 'database' variable that uses 'getDatabase' &  pass in 'app'
 const database = getDatabase(app);
+
 // ... create a 'shoppingListInDB' var & set it equal to the ref() function w/c takes in 2 things: the db 'database' & then we call this reference "shoppingList"
 const shoppingListInDB = ref(database, "shoppingList");
 
@@ -38,6 +39,8 @@ addButtonEl.addEventListener("click", function () {
 
 // ... the onValue() function runs whenever there is a change in the db & gives us the 'snapshot' everytime the db updates & then turns that into an array ... Firebase also has a method called 'snapshot.exists', w/c returns a TRUE or FALSE boolean value based on whether there is a 'snapshot' or not
 onValue(shoppingListInDB, function (snapshot) {
+  // ... used 'snapshot.exists()' method to show items when there are items in the db & if there aren't, displays the text 'No items here... yet'.; this is also returning a TRUE or FALSE value ... & in the case of TRUE, that means there is a 'snapshot', there is at least 1 item in the db ...
+
   if (snapshot.exists()) {
     let itemsArray = Object.entries(snapshot.val());
     clearShoppingListEl();
@@ -48,7 +51,7 @@ onValue(shoppingListInDB, function (snapshot) {
 
       appendItemToShoppingListEl(currentItem);
     }
-    // ... now the 'else' clause, is when it's FALSE, w/c means there are no items in the db, in thatm case, we want to change the 'shoppingListEl'...
+    // ... now the 'else' clause, is when it's FALSE, w/c means there are no items in the db, in that case, we want to change the 'shoppingListEl'...
   } else {
     shoppingListEl.innerHTML = "No items here... yet";
   }
@@ -75,6 +78,7 @@ const appendItemToShoppingListEl = (item) => {
   newEl.textContent = itemValue;
 
   newEl.addEventListener("click", function () {
+    // ... for 'exactLocationOfItemInDB', set this equal to ref() w/c always requires to specify the 'database', then we need to say we're inside the 'shoppingList' & the id of whichever item that we want to take away
     let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
     // ... use the remove function to remove the item from the database by feeding it w/ the 'exactLocationOfItemInDB'
     remove(exactLocationOfItemInDB);
